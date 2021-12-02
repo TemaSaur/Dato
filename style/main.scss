@@ -1,0 +1,162 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+$accent: #EFE965;
+$dark: #5F6367;
+
+html {
+	font-size: 100%;
+	font-family: "Roboto Slab"
+}
+
+h1, h2, h3 {
+	font-family: "Oswald";
+}
+p {
+	line-height: 1.4;
+	padding-bottom: 1.5rem;
+}
+
+.container {
+	width: 100%;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 8rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 2rem;
+	z-index: 999;
+	transition: all .3s;
+
+	&.scrolled {
+		background: #000000a0;
+		height: 5rem;
+		backdrop-filter: blur(5px);
+		.logo img {
+			height: 3rem;
+		}
+	}
+}
+
+.logo img {
+	height: 6rem;
+	transition: all .3s;
+}
+
+.nav {
+	display: flex;
+	gap: 1rem;
+}
+
+.nav--link {
+	font-family: "Roboto";
+	text-decoration: none;
+	color: #fff;
+	transition: all .2s;
+
+	&:hover, &:focus {
+		transform: scale(1.2) translate(0, -.05em);
+		text-decoration: underline;
+	}
+	&:focus {
+		outline: 1px solid #fff;
+		color: $accent;
+	}
+}
+
+.hero {
+	height: 80vh;
+	background-color: #4b4b4b;
+	background-image: url('../img/bg.png');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+}
+
+.hero--heading {
+	position: absolute;
+	top: calc(50% - 2rem);
+	color: #fff;
+	font-size: 4rem;
+}
+
+.downarrow {
+	font-size: 4rem;
+	position: absolute;
+	bottom: 0rem;
+	color: $accent;
+	text-decoration: none;
+	font-family: "Roboto";
+	display: block;
+	padding: 2rem 3rem;
+}
+
+.anchor {
+	position: relative;
+	top: -5rem;
+}
+
+.section--heading {
+	color: $dark;
+	font-size: 3rem;
+	text-align: center;
+	padding-top: 3rem;
+	padding-bottom: 2rem;
+}
+
+.product--cards {
+	display: flex;
+	justify-content: space-between;
+
+	width: 80%;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.product--card {
+	width: 200px;
+	box-shadow: 0px 1px 5px #00000030;
+	padding: 1rem .5rem;
+	border-radius: 1rem;
+	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.product--card-image {
+	height: 5rem;
+	margin-bottom: .5rem;
+}
+
+.product--card-name {
+	color: $dark;
+	display: inline-block;
+}
+
+.product--image {
+	display: block;
+	margin: 3rem auto;
+}
+
+.section.about {
+	background: $accent;
+}
