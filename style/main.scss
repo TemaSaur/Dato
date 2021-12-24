@@ -9,17 +9,39 @@
 $accent: #EFE965;
 $dark: #5F6367;
 
+
 html {
 	font-size: 100%;
-	font-family: "Roboto Slab"
+	font-family: "Roboto Condensed";
 }
 
 h1, h2, h3 {
 	font-family: "Oswald";
 }
+
+$h1-fs: 5rem;
+
+h1 {
+	font-size: $h1-fs;
+}
+h2 {
+	font-size: 4rem;
+}
 p {
-	line-height: 1.4;
+	line-height: 1.5;
 	padding-bottom: 1.5rem;
+	font-size: 1.6rem;
+}
+@media (max-width: 1340px) {
+	h1 {
+		font-size: 4rem;
+	}
+	h2 {
+		font-size: 3.33rem;
+	}
+	p {
+		font-size: 1.35rem
+	}
 }
 
 .container {
@@ -93,9 +115,9 @@ header {
 
 .hero--heading {
 	position: absolute;
-	top: calc(50% - 2rem);
+	top: calc(50% - (#{$h1-fs} * 1.5));
 	color: #fff;
-	font-size: 4rem;
+	text-align: center;
 }
 
 .downarrow {
@@ -116,12 +138,11 @@ header {
 
 .section--heading {
 	color: $dark;
-	font-size: 3rem;
 	text-align: center;
 	padding-top: 3rem;
 	padding-bottom: 2rem;
 }
-
+/*
 .product--cards {
 	display: flex;
 	justify-content: space-between;
@@ -155,8 +176,28 @@ header {
 .product--image {
 	display: block;
 	margin: 3rem auto;
+}*/
+
+
+.product--image {
+	height: 256px;
 }
 
 .section.about {
 	background: $accent;
+}
+
+.flex {
+	display: flex;
+
+	&.align-center {
+		align-items: center;
+	}
+	&.gap {
+		gap: 2.5rem;
+	}
+}
+
+.spacing {
+	padding: 2.5rem 0;
 }

@@ -9,16 +9,37 @@
 
 html {
   font-size: 100%;
-  font-family: "Roboto Slab";
+  font-family: "Roboto Condensed";
 }
 
 h1, h2, h3 {
   font-family: "Oswald";
 }
 
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
 p {
-  line-height: 1.4;
+  line-height: 1.5;
   padding-bottom: 1.5rem;
+  font-size: 1.6rem;
+}
+
+@media (max-width: 1340px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 3.33rem;
+  }
+  p {
+    font-size: 1.35rem;
+  }
 }
 
 .container {
@@ -113,9 +134,9 @@ header.scrolled .logo img {
 
 .hero--heading {
   position: absolute;
-  top: calc(50% - 2rem);
+  top: calc(50% - (5rem * 1.5));
   color: #fff;
-  font-size: 4rem;
+  text-align: center;
 }
 
 .downarrow {
@@ -136,58 +157,71 @@ header.scrolled .logo img {
 
 .section--heading {
   color: #5F6367;
-  font-size: 3rem;
   text-align: center;
   padding-top: 3rem;
   padding-bottom: 2rem;
 }
 
+/*
 .product--cards {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 80%;
-  max-width: 1000px;
-  margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+
+	width: 80%;
+	max-width: 1000px;
+	margin: 0 auto;
 }
 
 .product--card {
-  width: 200px;
-  -webkit-box-shadow: 0px 1px 5px #00000030;
-          box-shadow: 0px 1px 5px #00000030;
-  padding: 1rem .5rem;
-  border-radius: 1rem;
+	width: 200px;
+	box-shadow: 0px 1px 5px #00000030;
+	padding: 1rem .5rem;
+	border-radius: 1rem;
+	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.product--card-image {
+	height: 5rem;
+	margin-bottom: .5rem;
+}
+
+.product--card-name {
+	color: $dark;
+	display: inline-block;
+}
+
+.product--image {
+	display: block;
+	margin: 3rem auto;
+}*/
+.product--image {
+  height: 256px;
+}
+
+.section.about {
+  background: #EFE965;
+}
+
+.flex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+}
+
+.flex.align-center {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.product--card-image {
-  height: 5rem;
-  margin-bottom: .5rem;
+.flex.gap {
+  gap: 2.5rem;
 }
 
-.product--card-name {
-  color: #5F6367;
-  display: inline-block;
-}
-
-.product--image {
-  display: block;
-  margin: 3rem auto;
-}
-
-.section.about {
-  background: #EFE965;
+.spacing {
+  padding: 2.5rem 0;
 }
 /*# sourceMappingURL=main.css.map */
