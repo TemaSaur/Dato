@@ -7,12 +7,13 @@
 }
 
 $accent: #EFE965;
-$dark: #5F6367;
-
+$dark: #464640;
 
 html {
 	font-size: 100%;
 	font-family: "Roboto Condensed";
+	scroll-behavior: smooth;
+	scroll-padding-top: 5rem;
 }
 
 h1, h2, h3 {
@@ -27,10 +28,19 @@ h1 {
 h2 {
 	font-size: 4rem;
 }
-p {
+h3 {
+	font-size: 3rem;
+}
+p, li {
 	line-height: 1.5;
 	padding-bottom: 1.5rem;
 	font-size: 1.6rem;
+}
+a {
+	color: #000;
+}
+.small-height {
+	padding-bottom: 0 !important;
 }
 @media (max-width: 1340px) {
 	h1 {
@@ -39,7 +49,10 @@ p {
 	h2 {
 		font-size: 3.33rem;
 	}
-	p {
+	h3 {
+		font-size: 2.75rem;
+	}
+	p, li {
 		font-size: 1.35rem
 	}
 }
@@ -48,6 +61,8 @@ p {
 	width: 100%;
 	max-width: 1000px;
 	margin: 0 auto;
+	padding-left: 1rem !important;
+	padding-right: 1rem !important;
 }
 
 header {
@@ -131,59 +146,23 @@ header {
 	padding: 2rem 3rem;
 }
 
-.anchor {
-	position: relative;
-	top: -5rem;
-}
-
 .section--heading {
 	color: $dark;
 	text-align: center;
 	padding-top: 3rem;
 	padding-bottom: 2rem;
 }
-/*
-.product--cards {
-	display: flex;
-	justify-content: space-between;
 
-	width: 80%;
-	max-width: 1000px;
-	margin: 0 auto;
-}
-
-.product--card {
-	width: 200px;
-	box-shadow: 0px 1px 5px #00000030;
-	padding: 1rem .5rem;
-	border-radius: 1rem;
-	
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.product--card-image {
-	height: 5rem;
-	margin-bottom: .5rem;
-}
-
-.product--card-name {
+.subsection--heading {
 	color: $dark;
-	display: inline-block;
+	padding-bottom: 2rem;
 }
 
-.product--image {
-	display: block;
-	margin: 3rem auto;
-}*/
-
-
-.product--image {
+.what--image {
 	height: 256px;
 }
 
-.section.about {
+.accent-bg {
 	background: $accent;
 }
 
@@ -193,11 +172,70 @@ header {
 	&.align-center {
 		align-items: center;
 	}
+	&.justify-center {
+		justify-content: center;
+	}
 	&.gap {
 		gap: 2.5rem;
+	}
+	&.wrap {
+		flex-wrap: wrap;
 	}
 }
 
 .spacing {
 	padding: 2.5rem 0;
+}
+
+section.programs {
+	padding-bottom: 3rem;
+}
+
+.program-cards {
+	justify-content: space-between;
+}
+
+.program-card {
+	background: #fff;
+	height: 200px;
+	padding: 10px;
+	border-radius: 15px;
+	display: flex;
+	align-items: center;
+}
+
+.program-card img {
+	max-height: 180px;
+	max-width: 250px;
+}
+
+.dark-line {
+	background: $dark;
+	color: #fff;
+	margin: 1rem 0;
+}
+
+.pay {
+	padding-bottom: 2.5rem;
+}
+
+figure.graph {
+	text-align: center;
+
+	img {
+		max-width: 80%;
+	}
+
+	figcaption {
+		font-style: italic;
+		color: #505050;
+	}
+}
+
+ul {
+	list-style: "— ";
+	list-style-position: inside;
+}
+li {
+	padding-left: 2ch;
 }
