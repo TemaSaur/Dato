@@ -1,3 +1,6 @@
+@import 'navbar';
+
+
 *,
 *::before,
 *::after {
@@ -56,6 +59,11 @@ a {
 		font-size: 1.35rem
 	}
 }
+@media (max-width: 1080px) {
+	h1 {
+		font-size: 3.5rem;
+	}
+}
 
 .container {
 	width: 100%;
@@ -93,7 +101,7 @@ header {
 	transition: all .3s;
 }
 
-.nav {
+.nav .list {
 	display: flex;
 	gap: 1rem;
 }
@@ -104,13 +112,16 @@ header {
 	color: #fff;
 	transition: all .2s;
 
-	&:hover, &:focus {
-		transform: scale(1.2) translate(0, -.05em);
-		text-decoration: underline;
-	}
-	&:focus {
-		outline: 1px solid #fff;
-		color: $accent;
+	@media (min-width: 861px) {
+		transition: all .2s;
+			&:hover, &:focus {
+				transform: scale(1.2) translate(0, -.05em);
+				text-decoration: underline;
+			}
+			&:focus {
+				outline: 1px solid #fff;
+				color: $accent;
+		}
 	}
 }
 
@@ -133,6 +144,7 @@ header {
 	top: calc(50% - (#{$h1-fs} * 1.5));
 	color: #fff;
 	text-align: center;
+	width: 95%;
 }
 
 .downarrow {
@@ -175,6 +187,9 @@ header {
 	&.justify-center {
 		justify-content: center;
 	}
+	&.space-between {
+		justify-content: space-between;
+	}
 	&.gap {
 		gap: 2.5rem;
 	}
@@ -191,10 +206,6 @@ section.programs {
 	padding-bottom: 3rem;
 }
 
-.program-cards {
-	justify-content: space-between;
-}
-
 .program-card {
 	background: #fff;
 	height: 200px;
@@ -202,11 +213,57 @@ section.programs {
 	border-radius: 15px;
 	display: flex;
 	align-items: center;
+	position: relative;
+
+	flex: 1;
+	justify-content: center;
+
+	&:hover::after,
+	&:active::after,
+	&:focus::after {
+		content: "";
+		display: block;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		border-radius: 15px;
+		outline: none;
+		border: none;
+
+		background: #00000020;
+	}
 }
 
 .program-card img {
 	max-height: 180px;
 	max-width: 250px;
+}
+
+@media (max-width: 940px) {
+	.program-cards {
+		gap: 1.5rem!important;
+	}
+	.program-card img {
+		max-height: 180px;
+		max-width: 220px;
+	}
+}
+
+@media (max-width: 861px) and (min-width: 817px) {
+	.program-card:last-child {
+		max-width: 31.5%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+@media (max-width: 650px) and (min-width: 501px) {
+	.program-card:last-child {
+		max-width: 50%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
 }
 
 .dark-line {

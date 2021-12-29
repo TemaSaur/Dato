@@ -1,4 +1,81 @@
 @charset "UTF-8";
+@media (max-width: 860px) {
+  .burger {
+    cursor: pointer;
+    width: 48px;
+    padding: 4px 8px;
+  }
+  .burger::after,
+  .burger::before,
+  .burger div {
+    background-color: #fff;
+    border-radius: 3px;
+    content: '';
+    display: block;
+    height: 3px;
+    margin: 7px 0;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
+  .burger.active::before {
+    -webkit-transform: translateY(10px) rotate(135deg);
+            transform: translateY(10px) rotate(135deg);
+  }
+  .burger.active::after {
+    -webkit-transform: translateY(-10px) rotate(-135deg);
+            transform: translateY(-10px) rotate(-135deg);
+  }
+  .burger.active div {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  nav .list {
+    height: calc(100vh - 80px);
+    width: 100vw;
+    position: fixed;
+    left: 0;
+    top: 80px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background: #EFE965;
+    color: #464640;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: all .4s;
+    transition: all .4s;
+    gap: 0 !important;
+  }
+  nav .list.active {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  nav .list a {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    color: #464640;
+    font-size: 1.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-bottom: 1px solid #464640;
+  }
+  nav .list a:hover, nav .list a:active, nav .list a:focus {
+    background: #00000030;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -60,6 +137,12 @@ a {
   }
 }
 
+@media (max-width: 1080px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+}
+
 .container {
   width: 100%;
   max-width: 1000px;
@@ -106,7 +189,7 @@ header.scrolled .logo img {
   transition: all .3s;
 }
 
-.nav {
+.nav .list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -121,15 +204,20 @@ header.scrolled .logo img {
   transition: all .2s;
 }
 
-.nav--link:hover, .nav--link:focus {
-  -webkit-transform: scale(1.2) translate(0, -0.05em);
-          transform: scale(1.2) translate(0, -0.05em);
-  text-decoration: underline;
-}
-
-.nav--link:focus {
-  outline: 1px solid #fff;
-  color: #EFE965;
+@media (min-width: 861px) {
+  .nav--link {
+    -webkit-transition: all .2s;
+    transition: all .2s;
+  }
+  .nav--link:hover, .nav--link:focus {
+    -webkit-transform: scale(1.2) translate(0, -0.05em);
+            transform: scale(1.2) translate(0, -0.05em);
+    text-decoration: underline;
+  }
+  .nav--link:focus {
+    outline: 1px solid #fff;
+    color: #EFE965;
+  }
 }
 
 .hero {
@@ -157,6 +245,7 @@ header.scrolled .logo img {
   top: calc(50% - (5rem * 1.5));
   color: #fff;
   text-align: center;
+  width: 95%;
 }
 
 .downarrow {
@@ -208,6 +297,12 @@ header.scrolled .logo img {
           justify-content: center;
 }
 
+.flex.space-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .flex.gap {
   gap: 2.5rem;
 }
@@ -225,12 +320,6 @@ section.programs {
   padding-bottom: 3rem;
 }
 
-.program-cards {
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
 .program-card {
   background: #fff;
   height: 200px;
@@ -242,11 +331,60 @@ section.programs {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.program-card:hover::after, .program-card:active::after, .program-card:focus::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 15px;
+  outline: none;
+  border: none;
+  background: #00000020;
 }
 
 .program-card img {
   max-height: 180px;
   max-width: 250px;
+}
+
+@media (max-width: 940px) {
+  .program-cards {
+    gap: 1.5rem !important;
+  }
+  .program-card img {
+    max-height: 180px;
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 861px) and (min-width: 817px) {
+  .program-card:last-child {
+    max-width: 31.5%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 650px) and (min-width: 501px) {
+  .program-card:last-child {
+    max-width: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
 }
 
 .dark-line {

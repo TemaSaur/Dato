@@ -11,11 +11,12 @@
 	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Roboto+Condensed&family=Roboto:wght@300&display=swap" rel="stylesheet">
 	<!-- /fonts -->
 
-	<link rel="stylesheet" href="dist/main.css">
+	<link rel="stylesheet" href="./dist/main.css">
 	<title>Разработчик ПО для бухучета - Dato</title>
 	<link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
 
-	<script src="js/header.js" defer></script>
+	<script src="./js/header.js" defer></script>
+	<script src="./js/navbar.js"></script>
 </head>
 <body>
 	<header>
@@ -25,10 +26,14 @@
 			</a>
 		</div>
 		<nav class="nav">
-			<a href="#What" class="nav--link">Что такое бухучет</a>
-			<a href="#Programs" class="nav--link">Популярное ПО</a>
-			<a href="#Pay" class="nav--link">Зарплаты</a>
-			<a href="#How-to" class="nav--link">Как стать?</a>
+
+			<div class="burger"><div></div></div>
+			<div class="list">
+				<a href="#What" class="nav--link">Что такое бухучет</a>
+				<a href="#Programs" class="nav--link">Популярное ПО</a>
+				<a href="#Pay" class="nav--link">Зарплаты</a>
+				<a href="#How-to" class="nav--link">Как стать?</a>
+			</div>
 		</nav>
 	</header>
 	<section class="hero">
@@ -59,7 +64,7 @@
 	<section class="section accent-bg programs" id="Programs">
 		<h2 class="section--heading container">Наиболее популярные программы для<br />ведения бухучета</h2>
 
-		<div class="program-cards flex gap wrap container">
+		<div class="program-cards flex gap space-between wrap container">
 			<a class="program-card" href="https://v8.1c.ru/buhv8/">
 				<img src="./img/programs/1c.jpg" alt="sss">
 			</a>
