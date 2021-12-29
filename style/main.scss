@@ -1,5 +1,5 @@
 @import 'navbar';
-
+@import 'variables';
 
 *,
 *::before,
@@ -8,9 +8,6 @@
 	margin: 0;
 	padding: 0;
 }
-
-$accent: #EFE965;
-$dark: #464640;
 
 html {
 	font-size: 100%;
@@ -172,6 +169,15 @@ header {
 
 .what--image {
 	height: 256px;
+}
+@media (max-width: 750px) {
+	.what--layout {
+		flex-direction: column!important;
+		padding-bottom: 0!important;
+	}
+	.what--image {
+		height: 200px;
+	}
 }
 
 .accent-bg {
