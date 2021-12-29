@@ -30,6 +30,7 @@ h2 {
 }
 h3 {
 	font-size: 3rem;
+	padding-top: 1.5rem;
 }
 p, li {
 	line-height: 1.5;
@@ -181,13 +182,17 @@ header {
 		flex-direction: column!important;
 		padding-bottom: 0!important;
 	}
-	.what--image {
+	.what--image{
 		height: 200px;
 	}
 }
 
 .accent-bg {
 	background: $accent;
+}
+
+.dark-bg {
+	background: $dark;
 }
 
 .flex {
@@ -211,7 +216,7 @@ header {
 }
 
 .spacing {
-	padding: 2.5rem 0;
+	padding: 2rem 0 0;
 }
 
 section.programs {
@@ -279,9 +284,9 @@ section.programs {
 }
 
 .dark-line {
-	background: $dark;
 	color: #fff;
 	margin: 1rem 0;
+	padding: 2.5rem 0;
 }
 
 .pay {
@@ -307,4 +312,39 @@ ul {
 }
 li {
 	padding-left: 2ch;
+}
+
+.white-block {
+	background: #fff;
+	padding: 2rem 2rem 0 !important;
+}
+
+.iot--layout {
+	padding-bottom: 2rem;
+}
+
+.iot--image {
+	width: 360px;
+	max-width: 40%;
+}
+
+@media (max-width: 860px) {
+	.iot--layout {
+		flex-direction: column !important;
+	}
+
+	.iot--image {
+		width: 420px;
+		max-width: 80%;
+	}
+}
+
+footer {
+	height: 8rem;
+	p {
+		padding: 0;
+		font-size: 1rem;
+		color: #ffffffa0;
+		user-select: none;
+	}
 }
